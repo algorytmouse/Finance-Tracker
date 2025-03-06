@@ -17,6 +17,15 @@ class DatabaseHandler:
         except AttributeError:
             print("You must open a database connection first")
 
+    def get_data(self):
+        pass
+
+    def update_data(self):
+        pass
+
+    def delete_data(self):
+        pass
+
 
 """
         cursor.execute('''CREATE TABLE IF NOT EXISTS users (
