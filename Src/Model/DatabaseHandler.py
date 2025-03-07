@@ -27,7 +27,7 @@ class DatabaseHandler:
         try:
             self.__conn.close()
         except AttributeError:
-            print("You must open a database connection first")
+            print("You must connect to the Database first, before attempting to close it.")
 
     def insert_data(self):
         pass

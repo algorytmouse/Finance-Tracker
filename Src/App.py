@@ -13,6 +13,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.main_layout)
 
         self.main_menu = MainMenu()
+        self.main_layout.addWidget(self.main_menu)
 
 
 app = QApplication(sys.argv)
