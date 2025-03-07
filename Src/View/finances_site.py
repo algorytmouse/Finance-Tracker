@@ -15,7 +15,7 @@
  ----------------------------------------------------------------------------------------
  """
 
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QPushButton, QMenuBar
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QPushButton
 from PySide6.QtGui import QIcon, Qt
 from PySide6.QtCore import QSize
 
