@@ -1,6 +1,6 @@
 """
 ----------------------------------------------------------------------------------------
- file: singleton.py
+ file: finances_site.py
 
  ----------------------------------------------------------------------------------------
 
@@ -11,23 +11,22 @@
  - Project: Finance-Tracker
  - Author: C.Ceylan
  - Date: 07.03.2025
+ - Description: Media Path Manager
 
  ----------------------------------------------------------------------------------------
  """
 
+from PySide6.QtWidgets import QWidget
 
-class Singleton():
+
+class FinancesSite(QWidget):
     """
-    Class: Singleton
-    template to inherit Singleton pattern into other classes
+    Class: FinancesSite
+    Site for managing and calculating your Finances
 
     Attributes:
     None
     """
 
-    _instance = None
-
-    def __new__(cls) -> object:
-        if not isinstance(cls._instance, cls):
-            cls._instance = super(Singleton, cls).__new__(cls)
-        return cls._instance
+    def __init__(self) -> None:
+        super().__init__()

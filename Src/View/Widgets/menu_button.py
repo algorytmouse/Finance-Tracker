@@ -21,6 +21,8 @@ from PySide6.QtGui import QIcon
 from PySide6.QtCore import QSize
 
 from Src.media_paths import ICONS
+from Src.Controller.event_handler import EventHandler
+from Src.View.menu_types import MenuTypes
 
 
 class MenuButton(QPushButton):
@@ -41,3 +43,5 @@ class MenuButton(QPushButton):
         icon = QIcon(ICONS[icon_type])
         self.setIcon(icon)
         self.setIconSize(QSize(100, 100))
+
+        self.clicked.connect(lambda: EventHandler().menu_btn_clicked(menu_type=MenuTypes.FINANCES))

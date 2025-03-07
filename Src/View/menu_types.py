@@ -1,6 +1,6 @@
 """
 ----------------------------------------------------------------------------------------
- file: singleton.py
+ file: menu_types.py
 
  ----------------------------------------------------------------------------------------
 
@@ -11,23 +11,21 @@
  - Project: Finance-Tracker
  - Author: C.Ceylan
  - Date: 07.03.2025
+ - Description: Media Path Manager
 
  ----------------------------------------------------------------------------------------
  """
 
+from enum import Enum
 
-class Singleton():
+
+class MenuTypes(Enum):
     """
-    Class: Singleton
-    template to inherit Singleton pattern into other classes
+    Class: MenuTypes
+    Provides Enum for different Submenus
 
     Attributes:
     None
     """
 
-    _instance = None
-
-    def __new__(cls) -> object:
-        if not isinstance(cls._instance, cls):
-            cls._instance = super(Singleton, cls).__new__(cls)
-        return cls._instance
+    FINANCES: str = "finances submenu"

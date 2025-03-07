@@ -18,5 +18,5 @@
 
 # Dictionary of icon paths
 ICONS = {
-    "expenses_icon": "Media/Icons/expenses.png"
+    "finances_icon": "Media/Icons/finances.png"
 }

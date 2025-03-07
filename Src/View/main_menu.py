@@ -21,7 +21,6 @@ from PySide6.QtGui import Qt
 
 from Src.View.Widgets.menu_button import MenuButton
 
-
 class MainMenu(QWidget):
     """
     Class: MainMenu
@@ -37,7 +36,7 @@ class MainMenu(QWidget):
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
-        expenses_btn = MenuButton(icon_type="expenses_icon")
+        expenses_btn = MenuButton(icon_type="finances_icon")
         self.layout.addWidget(expenses_btn, alignment=Qt.AlignmentFlag.AlignAbsolute)
 
         expenses_btn.setMaximumWidth(self.width() * 0.5)
