@@ -37,6 +37,7 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.setMinimumSize(600, 480)
+        self.setWindowTitle("Finance Tracker")
 
         main_layout = QStackedWidget()
         EventHandler().app_widgets[WidgetTypes.MAIN_LAYOUT] = main_layout

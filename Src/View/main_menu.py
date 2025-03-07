@@ -38,4 +38,4 @@ class MainMenu(QWidget):
         finances_btn = MenuButton(icon_type="finances_icon")
         self.layout.addWidget(finances_btn, alignment=Qt.AlignmentFlag.AlignAbsolute)
 
-        finances_btn.setMaximumWidth(self.width() * 0.5)
+        #finances_btn.setMaximumWidth(self.width() * 0.5)

@@ -23,7 +23,6 @@ from Src.media_paths import ICONS
 from Src.Controller.event_handler import EventHandler
 from Src.widget_types import WidgetTypes
 
-
 class FinancesSite(QWidget):
     """
     Class: FinancesSite
@@ -50,3 +49,8 @@ class FinancesSite(QWidget):
         finances_input_layout = QVBoxLayout()
         finances_input_widgets.setLayout(finances_input_layout)
         layout.addWidget(finances_input_widgets)
+
+        add_btn = QPushButton()
+        add_btn.setIcon(QIcon(ICONS.get("add_icon")))
+        add_btn.setIconSize(QSize(50,50))
+        layout.addWidget(add_btn)

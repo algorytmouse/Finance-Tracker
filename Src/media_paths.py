@@ -22,5 +22,6 @@ ICONS = {
     "back_arrow_icon": "Media/Icons/back.png",
     "delete_icon": "Media/Icons/delete.png",
     "expenses_icon": "Media/Icons/expenses.png",
+    "add_icon": "Media/Icons/add.png",
     "earnings_icon": "Media/Icons/earnings.png"
 }
