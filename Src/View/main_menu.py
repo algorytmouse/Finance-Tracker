@@ -11,7 +11,6 @@
  - Project: Finance-Tracker
  - Author: C.Ceylan
  - Date: 07.03.2025
- - Description: Media Path Manager
 
  ----------------------------------------------------------------------------------------
  """
@@ -36,7 +35,7 @@ class MainMenu(QWidget):
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
-        expenses_btn = MenuButton(icon_type="finances_icon")
-        self.layout.addWidget(expenses_btn, alignment=Qt.AlignmentFlag.AlignAbsolute)
+        finances_btn = MenuButton(icon_type="finances_icon")
+        self.layout.addWidget(finances_btn, alignment=Qt.AlignmentFlag.AlignAbsolute)
 
-        expenses_btn.setMaximumWidth(self.width() * 0.5)
+        finances_btn.setMaximumWidth(self.width() * 0.5)

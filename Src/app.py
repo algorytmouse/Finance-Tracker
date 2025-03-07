@@ -21,6 +21,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from Src.Controller.event_handler import EventHandler
 from Src.View.main_menu import MainMenu
 from Src.View.finances_site import FinancesSite
+from Src.widget_types import WidgetTypes
 
 
 class MainWindow(QMainWindow):
@@ -38,14 +39,15 @@ class MainWindow(QMainWindow):
         self.setMinimumSize(600, 480)
 
         main_layout = QStackedWidget()
+        EventHandler().app_widgets[WidgetTypes.MAIN_LAYOUT] = main_layout
         self.setCentralWidget(main_layout)
 
-        # initialize EventHandler -> also Loads DatabaseHandler and passes in main_layout
-        EventHandler().main_layout = main_layout
-
         main_menu = MainMenu()
+        EventHandler().app_widgets[WidgetTypes.MAIN_MENU] = main_menu
         main_layout.addWidget(main_menu)
+
         finances_site = FinancesSite()
+        EventHandler().app_widgets[WidgetTypes.FINANCES] = finances_site
         main_layout.addWidget(finances_site)
 
 

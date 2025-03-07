@@ -11,7 +11,6 @@
  - Project: Finance-Tracker
  - Author: C.Ceylan
  - Date: 07.03.2025
- - Description: Media Path Manager
 
  ----------------------------------------------------------------------------------------
  """

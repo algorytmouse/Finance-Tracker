@@ -11,18 +11,13 @@
  - Project: Finance-Tracker
  - Author: C.Ceylan
  - Date: 07.03.2025
- - Description: Media Path Manager
 
  ----------------------------------------------------------------------------------------
  """
 
-from typing import Optional
-
-from PySide6.QtWidgets import QStackedWidget
-
 from Src.Model.database_handler import DatabaseHandler
 from Src.singleton import Singleton
-from Src.View.menu_types import MenuTypes
+from Src.widget_types import WidgetTypes
 
 
 class EventHandler(Singleton):
@@ -34,13 +29,14 @@ class EventHandler(Singleton):
     None
     """
 
+    app_widgets = {}
+
     def __init__(self) -> None:
         if not hasattr(self, "_initialized"):
             self.db = DatabaseHandler()
-            self.main_layout: Optional[QStackedWidget] = None
             EventHandler._initialized = True
 
-    def menu_btn_clicked(self, menu_type: MenuTypes) -> None:
+    def menu_btn_clicked(self, menu_type: WidgetTypes) -> None:
         """
         Slot for Menu Button Clicked Event
 
@@ -48,12 +44,17 @@ class EventHandler(Singleton):
         :rtype: None
         """
 
-        if self.main_layout is None:
+        if EventHandler.app_widgets.get(WidgetTypes.MAIN_LAYOUT, None) is None:
             print("Main Layout does not exist")
             return None
 
+        # handle signal based on what button click triggered it
         match menu_type:
-            case MenuTypes.FINANCES:
-                self.main_layout.setCurrentIndex(1)
+            case WidgetTypes.MAIN_MENU:
+                EventHandler.app_widgets.get(WidgetTypes.MAIN_LAYOUT).setCurrentWidget(
+                    EventHandler.app_widgets.get(menu_type))
+            case WidgetTypes.FINANCES:
+                EventHandler.app_widgets.get(WidgetTypes.MAIN_LAYOUT).setCurrentWidget(
+                    EventHandler.app_widgets.get(menu_type))
             case _:
                 print("Menu Type does not exist!")

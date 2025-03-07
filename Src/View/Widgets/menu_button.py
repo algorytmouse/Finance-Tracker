@@ -11,7 +11,6 @@
  - Project: Finance-Tracker
  - Author: C.Ceylan
  - Date: 07.03.2025
- - Description: Media Path Manager
 
  ----------------------------------------------------------------------------------------
  """
@@ -22,7 +21,7 @@ from PySide6.QtCore import QSize
 
 from Src.media_paths import ICONS
 from Src.Controller.event_handler import EventHandler
-from Src.View.menu_types import MenuTypes
+from Src.widget_types import WidgetTypes
 
 
 class MenuButton(QPushButton):
@@ -44,4 +43,6 @@ class MenuButton(QPushButton):
         self.setIcon(icon)
         self.setIconSize(QSize(100, 100))
 
-        self.clicked.connect(lambda: EventHandler().menu_btn_clicked(menu_type=MenuTypes.FINANCES))
+        self.clicked.connect(
+            lambda: EventHandler().menu_btn_clicked(menu_type=WidgetTypes.FINANCES)
+        )

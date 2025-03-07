@@ -1,6 +1,6 @@
 """
 ----------------------------------------------------------------------------------------
- file: menu_types.py
+ file: finances_widget.py
 
  ----------------------------------------------------------------------------------------
 
@@ -11,21 +11,24 @@
  - Project: Finance-Tracker
  - Author: C.Ceylan
  - Date: 07.03.2025
- - Description: Media Path Manager
 
  ----------------------------------------------------------------------------------------
  """
 
-from enum import Enum
+from PySide6.QtWidgets import QWidget, QHBoxLayout, QLabel
 
 
-class MenuTypes(Enum):
+class FinanceWidget(QWidget):
     """
-    Class: MenuTypes
-    Provides Enum for different Submenus
+    Class: FinancesWidget
+    Field to Add Finance information
 
     Attributes:
     None
     """
 
-    FINANCES: str = "finances submenu"
+    def __init__(self, finance_type) -> None:
+        super().__init__()
+
+        layout = QHBoxLayout()
+        self.setLayout(layout)

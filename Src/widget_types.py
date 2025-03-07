@@ -1,6 +1,6 @@
 """
 ----------------------------------------------------------------------------------------
- file: media_paths.py
+ file: widget_types.py
 
  ----------------------------------------------------------------------------------------
 
@@ -11,14 +11,22 @@
  - Project: Finance-Tracker
  - Author: C.Ceylan
  - Date: 07.03.2025
- - Description: Media Path Manager
 
  ----------------------------------------------------------------------------------------
  """
 
-# Dictionary of icon paths
-ICONS = {
-    "finances_icon": "Media/Icons/finances.png",
-    "back_arrow_icon": "Media/Icons/back.png",
-    "add_icon": "Media/Icons/add.png"
-}
+from enum import Enum
+
+
+class WidgetTypes(Enum):
+    """
+    Class: WidgetTypes
+    Provides Enum for different Widget Types (Main Pages) within the application
+
+    Attributes:
+    None
+    """
+
+    MAIN_LAYOUT: str = "main layout as stacked widget"
+    MAIN_MENU: str = "main menu"
+    FINANCES: str = "finances submenu"
