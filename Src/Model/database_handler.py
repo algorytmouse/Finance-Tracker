@@ -1,13 +1,39 @@
+"""
+----------------------------------------------------------------------------------------
+ file: event_handler.py
+
+ ----------------------------------------------------------------------------------------
+
+              - ALGORYTMOUSE -
+
+ ----------------------------------------------------------------------------------------
+
+ - Project: Finance-Tracker
+ - Author: C.Ceylan
+ - Date: 07.03.2025
+ - Description: Media Path Manager
+
+ ----------------------------------------------------------------------------------------
+ """
+
 import sqlite3
+from Src.singleton import Singleton
 
 
-class DatabaseHandler:
+class DatabaseHandler(Singleton):
+    """
+    Class: MainWindow
+    this class handles Database Operations and Connections
 
-    def __init__(self):
+    Attributes:
+    None
+    """
+
+    def __init__(self) -> None:
         self.__conn = None
         self.__cursor = None
 
-    def connect_to_db(self):
+    def connect_to_db(self) -> None:
         """
         Establishes connection to the Database
 
@@ -17,7 +43,7 @@ class DatabaseHandler:
         self.__conn = sqlite3.connect("Database.db")
         self.__cursor = self.__conn.cursor()
 
-    def close_db_connection(self):
+    def close_db_connection(self) -> None:
         """
         Closes the Database connection
 
@@ -30,7 +56,8 @@ class DatabaseHandler:
             print("You must connect to the Database first, before attempting to close it.")
 
     def insert_data(self):
-        pass
+        self.__cursor.execute("SELECT * FROM table_name")
+        return self.__cursor.fetchall()
 
     def get_data(self):
         pass
@@ -69,5 +96,3 @@ class DatabaseHandler:
 
         conn.close()
         #conn.close() -> close database connection"""
-
-DatabaseHandler().close_db_connection()
